@@ -4,17 +4,17 @@ using WEB.Services;
 namespace WEB.Controllers;
 
 [ApiController]
-[Route("api/customers")]
+[Route("api/records")]
 public class ApiController : ControllerBase
 {
     private readonly IRecordService _service;
 
-    public CustomersController(ICustomerService customerService)
+    public CustomersController(IRecordService serv)
     {
-        _customerService = customerService;
+        _service = serv;
     }
 
-    [HttpGet("{id}/purchases")]
+    [HttpGet("")]
     public async Task<IActionResult> GetCustomerPurchases(int id)
     {
         var result = await _customerService.GetCustomerPurchasesAsync(id);
