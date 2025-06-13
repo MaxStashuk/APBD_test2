@@ -22,4 +22,6 @@ public class Student
     [EmailAddress]
     public string Email { get; set; }
     
+    public ICollection<Record> records { get; set; }
+
 }

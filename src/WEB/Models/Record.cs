@@ -32,4 +32,7 @@ public class Record
     
     [Required]
     public DateTime CreatedAt { get; set; }
+    
+    public ICollection<Record> records { get; set; }
+
 }

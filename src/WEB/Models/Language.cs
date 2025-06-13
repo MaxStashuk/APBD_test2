@@ -12,4 +12,6 @@ public class Language
     [Required]
     [MaxLength(100)]
     public string Name { get; set; }
+    
+    public ICollection<Record> records { get; set; }
 }
