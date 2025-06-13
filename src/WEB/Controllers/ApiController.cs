@@ -9,7 +9,7 @@ public class ApiController : ControllerBase
 {
     private readonly IRecordService _service;
 
-    public CustomersController(IRecordService serv)
+    public ApiController(IRecordService serv)
     {
         _service = serv;
     }
@@ -17,10 +17,8 @@ public class ApiController : ControllerBase
     [HttpGet("")]
     public async Task<IActionResult> GetCustomerPurchases(int id)
     {
-        var result = await _customerService.GetCustomerPurchasesAsync(id);
-
-        if (result == null)
-            return NotFound($"Customer with id {id} not found");
+        var result = await _service.GetAllRecords();
+        
 
         return Ok(result);
     }
