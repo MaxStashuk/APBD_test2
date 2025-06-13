@@ -11,11 +11,11 @@ public class Student
     
     [Required]
     [MaxLength(100)]
-    public string Name { get; set; }
+    public string FirstName { get; set; }
     
     [Required]
     [MaxLength(100)]
-    public string Surname { get; set; }
+    public string LastName { get; set; }
     
     [Required]
     [MaxLength(250)]
